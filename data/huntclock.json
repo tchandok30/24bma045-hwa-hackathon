@@ -1,0 +1,65 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "slug": "huntclock-s",
+      "name": "HuntClock S",
+      "size": "S",
+      "weight_range": "up to 10 kg",
+      "price": 2999,
+      "description": "Compact wind-up timer for small dogs. Three hours of treat hunting.",
+      "active": 1
+    },
+    {
+      "id": 2,
+      "slug": "huntclock-m",
+      "name": "HuntClock M",
+      "size": "M",
+      "weight_range": "10-25 kg",
+      "price": 3499,
+      "description": "Mid-size for medium dogs. More treat capacity, same battery-free clockwork.",
+      "active": 1
+    },
+    {
+      "id": 3,
+      "slug": "huntclock-l",
+      "name": "HuntClock L",
+      "size": "L",
+      "weight_range": "25 kg+",
+      "price": 3999,
+      "description": "Large for big dogs. Biggest treat capacity and sturdiest base.",
+      "active": 1
+    },
+    {
+      "id": 4,
+      "slug": "disc-pack",
+      "name": "Extra Disc Pack (3 discs)",
+      "size": "accessory",
+      "weight_range": "Easy/Medium/Genius",
+      "price": 499,
+      "description": "Swap discs to rearrange puzzle stations. Keeps your dog guessing.",
+      "active": 1
+    }
+  ],
+  "promo_codes": [
+    {
+      "code": "HUNT10",
+      "discount_percent": 10,
+      "active": 1
+    }
+  ],
+  "orders": [],
+  "order_items": [],
+  "subscriptions": [],
+  "newsletter": [],
+  "order_status_history": [],
+  "_seq": {
+    "products": 4,
+    "promo_codes": 0,
+    "orders": 0,
+    "order_items": 0,
+    "subscriptions": 0,
+    "newsletter": 0,
+    "order_status_history": 0
+  }
+}
