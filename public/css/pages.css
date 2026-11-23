@@ -358,3 +358,88 @@ input[type=range] { width: 100%; accent-color: var(--tangerine); }
   .demo-board { height: 520px; }
 }
 
+/* ---------- FAQ page ---------- */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-6);
+  align-items: start;
+}
+.faq-list-col { display: flex; flex-direction: column; gap: var(--space-3); }
+.faq-side-col { position: sticky; top: 90px; }
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--paper);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--teal-900);
+  cursor: pointer;
+  text-align: left;
+  transition: all 200ms ease;
+  position: relative;
+  overflow: hidden;
+}
+.faq-q:hover {
+  border-color: var(--tangerine);
+  background: #FFF1DC;
+}
+.faq-q[aria-expanded="true"] {
+  border-color: var(--tangerine);
+  background: #FFF1DC;
+  box-shadow: var(--shadow-sticker);
+}
+.faq-q .faq-num {
+  flex: none;
+  font-size: 1.1rem;
+  color: var(--tangerine);
+  font-variant-numeric: tabular-nums;
+}
+.faq-q .faq-text { flex: 1; }
+.faq-q .faq-toggle {
+  flex: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+  transition: transform 200ms ease;
+}
+.faq-q[aria-expanded="true"] .faq-toggle { transform: rotate(45deg); }
+
+.faq-a {
+  padding: 0 var(--space-4) var(--space-4);
+  color: var(--ink);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  animation: slide-in 300ms ease both;
+}
+.faq-a p { margin: 0; max-width: none; }
+
+@media (max-width: 900px) {
+  .faq-grid { grid-template-columns: 1fr; }
+  .faq-side-col { position: static; top: auto; }
+}
+
+/* ---------- Desktop/laptop polish ---------- */
+@media (min-width: 1025px) {
+  .hero { gap: var(--space-8); }
+  .hero-visual { height: 520px; }
+  .hero-visual svg.product-svg { filter: drop-shadow(6px 6px 0 rgba(11,59,58,0.12)); }
+  .product-head { gap: var(--space-8); }
+  .product-options { gap: var(--space-6); }
+  .checkout-layout { gap: var(--space-8); }
+  .order-sidebar { position: sticky; top: 90px; }
+  .order-sidebar .card { position: sticky; top: 90px; }
+  .stations { grid-template-columns: repeat(6, 1fr); }
+  .testimonials { grid-template-columns: repeat(4, 1fr); }
+  .why-grid { gap: var(--space-8); }
+  .hero-ctas { gap: var(--space-3); }
+}
+
