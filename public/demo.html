@@ -63,7 +63,7 @@
 
   <section>
     <div class="container">
-      <div class="demo-controls" data-reveal>
+      <div class="demo-controls section-enter" data-reveal>
         <div class="slider-row">
           <label style="flex:none; font-weight:700; color:var(--teal-900); font-size:0.9rem">Timer</label>
           <input type="range" id="time-slider" min="0" max="180" value="0" step="1">
@@ -88,7 +88,7 @@
 
   <section>
     <div class="container">
-      <div class="demo-board" data-reveal>
+      <div class="demo-board section-enter" data-reveal>
         <svg class="board-bg" viewBox="0 0 500 400" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
           <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="#E8DCC6" stroke-width="1"/></pattern></defs>
           <rect width="100%" height="100%" fill="url(#grid)"/>
@@ -106,14 +106,14 @@
         <div class="dog-marker" id="dog-marker" aria-hidden="true">🐕</div>
       </div>
 
-      <div class="demo-counters">
+      <div class="demo-counters section-enter" data-reveal>
         <div class="counter"><div class="num" id="cnt-unlocked">0</div><div class="lbl">Stations unlocked</div></div>
         <div class="counter"><div class="num" id="cnt-treats">0</div><div class="lbl">Treats released</div></div>
         <div class="counter"><div class="num" id="cnt-busy">0m</div><div class="lbl">Busy time</div></div>
         <div class="counter"><div class="num" id="cnt-vs">8m</div><div class="lbl">Normal toy busy time</div></div>
       </div>
 
-      <div class="vs-chart" data-reveal>
+      <div class="vs-chart section-enter" data-reveal>
         <div class="vs-bar"><div class="fill" id="bar-huntclock" style="height:100%"></div><span class="lbl">HuntClock</span></div>
         <div class="vs-bar"><div class="fill" id="bar-normal" style="height:27%"></div><span class="lbl">Normal toy</span></div>
       </div>

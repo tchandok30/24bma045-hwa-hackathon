@@ -248,3 +248,113 @@ input[type=range] { width: 100%; accent-color: var(--tangerine); }
   .add-row .btn { width: 100%; }
   .thumb-row { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ---------- Impressive UI additions ---------- */
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--teal-900), var(--teal-700));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 251, 243, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 220, 198, 0.6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glass);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sticker), var(--shadow-glass);
+  border-color: var(--tangerine);
+}
+
+/* Animated CTA button shimmer */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%; left: -50%; right: -50%; bottom: -50%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(25deg);
+  animation: shimmer 3s infinite;
+}
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
+}
+
+/* Pulse badge */
+.pulse-badge {
+  animation: pulse 2.5s infinite;
+}
+
+/* Hero visual hero upgrade */
+.hero-visual svg.product-svg {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Bell ding animation */
+.ding-bell {
+  animation: ding-ring 3s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Key spin */
+.key-animated {
+  animation: key-spin 8s linear infinite;
+  transform-origin: 50% 20%;
+}
+
+/* Improved counters */
+.counter { transition: transform 200ms ease; }
+.counter:hover { transform: scale(1.05); }
+
+/* Responsive typography improvements */
+@media (max-width: 480px) {
+  h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+  h2 { font-size: clamp(1.4rem, 6vw, 2.2rem); }
+  .hero { padding: var(--space-5) 0 var(--space-4); }
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; }
+  .stations { grid-template-columns: repeat(2, 1fr); }
+  .testimonials { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+  .demo-board { height: 340px; }
+  .vs-chart { height: 90px; gap: var(--space-2); }
+  .vs-bar .fill { width: 22px; }
+  .checkout-layout { gap: var(--space-4); }
+  .order-sidebar { position: static; top: auto; }
+  .order-sidebar .card { position: static; top: auto; }
+}
+
+@media (max-width: 360px) {
+  body { font-size: 0.95rem; }
+  .container { padding: 0 var(--space-1); }
+  .cart-item { grid-template-columns: 52px 1fr auto; gap: var(--space-1); padding: var(--space-1); }
+  .cart-item .item-total { font-size: 0.8rem; }
+  .nav-inner { padding: var(--space-1) var(--space-1); gap: var(--space-2); }
+  .brand { font-size: 1.1rem; }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+  .stations { grid-template-columns: repeat(3, 1fr); }
+  .testimonials { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Large desktop */
+@media (min-width: 1281px) {
+  .hero-visual { height: 520px; }
+  .demo-board { height: 520px; }
+}
+

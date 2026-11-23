@@ -44,12 +44,68 @@
   --radius-md: 20px;
   --radius-pill: 999px;
 
-  /* Shadow */
-  --shadow-soft: 0 2px 0 rgba(11, 59, 58, 0.08), 0 12px 30px -12px rgba(11, 59, 58, 0.25);
-  --shadow-sticker: 4px 4px 0 var(--teal-900);
+/* Shadow */
+--shadow-soft: 0 2px 0 rgba(11, 59, 58, 0.08), 0 12px 30px -12px rgba(11, 59, 58, 0.25);
+--shadow-sticker: 4px 4px 0 var(--teal-900);
+--shadow-glass: 0 8px 32px rgba(11, 59, 58, 0.12);
+
+/* Animation */
+--ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ---------- Keyframe animations ---------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+@keyframes key-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ding-ring {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* Reveal class for IntersectionObserver */
+[data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity 600ms ease, transform 600ms ease; }
+[data-reveal].revealed { opacity: 1; transform: translateY(0); }
+
+/* Glassmorphism card */
+.glass {
+  background: rgba(255, 251, 243, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(232, 220, 198, 0.5);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Floating element */
+.floating { animation: float 6s ease-in-out infinite; }
+
+/* Winding key animation */
+.key-animated { animation: key-spin 8s linear infinite; transform-origin: 50% 20%; }
+
+/* Ding bell */
+.ding-bell { animation: ding-ring 3s ease-in-out infinite; }
+
+/* Section entrance */
+.section-enter { animation: slide-in 700ms var(--ease-bounce) both; }
+
+/* Improved focus ring */
+*:focus-visible { outline: 3px solid var(--tangerine); outline-offset: 2px; }
+
 
 html {
   scroll-behavior: smooth;
