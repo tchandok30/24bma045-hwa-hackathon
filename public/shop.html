@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop &mdash; HuntClock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="main-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="HuntClock home">
+      <svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c0-1.1 0.9-2 2-2s2 0.9 2 2 0.9 2 2 2 2-0.9 2-2 0.9-2 2-2 2c-1.1 0-2 0.9-2 2M12 2c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M12 14c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M12 10c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M22 12c0-1.1 0.9-2 2-2s2 0.9 2 2 0.9 2 2 2 2-0.9 2-2 0.9-2 2-2 2c-1.1 0-2 0.9-2 2M14 22c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M10 22c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M18 10c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M18 14c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2" fill="#0B3B3A"/></svg>
+      HuntClock
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html" style="background:var(--teal-100); color:var(--teal-900)">Shop</a>
+      <a href="/demo.html">Live Demo</a>
+      <a href="/subscription.html">Subscribe</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/track.html">Track Order</a>
+      <a href="/cart.html" class="cart-badge-wrap" aria-label="Cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7 18c-1.1 0-1.5-0.9-1.5-1.5v-5h5v5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5v-5h2v5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5v-5c0-2.8-2.2-5-5-5H7c-2.8 0-5 2.2-5 5v5c0 0.8 0.7 1.5 1.5 1.5M3 18v-5c0-0.8 0.7-1.5 1.5-1.5s1.5 0.7 1.5 1.5v5" fill="none" stroke="#0B3B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="cart-count" hidden>0</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="drawer-overlay" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="drawer-overlay">
+  <div class="drawer-header">
+    <span class="brand" style="font-size:1.2rem">HuntClock</span>
+    <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+  </div>
+  <div class="drawer-links">
+    <a href="/shop.html">Shop</a>
+    <a href="/demo.html">Live Demo</a>
+    <a href="/subscription.html">Subscribe</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/track.html">Track Order</a>
+    <a href="/cart.html">Cart (<span class="cart-count">0</span>)</a>
+  </div>
+  <div class="drawer-cart">Items in cart: <span class="cart-count">0</span></div>
+</div>
+
+<main id="main">
+  <section style="padding:var(--space-5) 0 var(--space-6)">
+    <div class="container">
+      <nav style="margin-bottom:var(--space-4); font-size:0.85rem; color:var(--muted);">
+        <a href="/" style="color:var(--teal-700)">Home</a> &rsaquo; <span>Shop</span>
+      </nav>
+      <h1 data-reveal>Build your HuntClock</h1>
+      <p data-reveal>Pick a size for your dog, choose a disc level, and add optional extras. Prices include all six puzzle stations.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="product-head" data-reveal>
+        <div class="main-view">
+          <div id="gallery-main" style="position:relative; display:inline-block;">
+            <svg id="main-product" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="HuntClock product">
+              <defs>
+                <radialGradient id="domeGrad" cx="50%" cy="40%" r="60%">
+                  <stop offset="0%" stop-color="#14625F"/><stop offset="100%" stop-color="#0B3B3A"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="200" cy="340" rx="110" ry="34" fill="#0B3B3A"/>
+              <ellipse cx="200" cy="330" rx="100" ry="26" fill="#14625F"/>
+              <circle cx="200" cy="180" rx="95" ry="105" fill="url(#domeGrad)"/>
+              <circle cx="200" cy="180" rx="88" ry="98" fill="none" stroke="#FFF6E5" stroke-width="3" opacity="0.6"/>
+              <circle cx="200" cy="120" r="42" fill="#FFF6E5" stroke="#0B3B3A" stroke-width="4"/>
+              <circle cx="200" cy="120" r="4" fill="#0B3B3A"/>
+              <g stroke="#0B3B3A" stroke-width="3" stroke-linecap="round">
+                <line x1="200" y1="80" x2="200" y2="90"/><line x1="230" y1="105" x2="240" y2="112"/>
+                <line x1="255" y1="128" x2="265" y2="128"/><line x1="230" y1="152" x2="240" y2="160"/>
+                <line x1="200" y1="160" x2="200" y2="170"/><line x1="170" y1="152" x2="160" y2="160"/>
+                <line x1="145" y1="128" x2="135" y2="128"/><line x1="170" y1="105" x2="160" y2="112"/>
+              </g>
+              <line x1="200" y1="120" x2="200" y2="86" stroke="#FF7A2F" stroke-width="3" stroke-linecap="round"/>
+              <line x1="200" y1="120" x2="228" y2="128" stroke="#FF7A2F" stroke-width="3" stroke-linecap="round"/>
+              <path d="M330 150 L360 150 L360 180 L350 180 L350 200 L330 200 Z" fill="#FF7A2F" stroke="#E15E14" stroke-width="3"/>
+              <rect x="347" y="162" width="6" height="16" fill="#E15E14" rx="2"/>
+              <g fill="#FFF6E5" stroke="#0B3B3A" stroke-width="2">
+                <circle cx="130" cy="270" r="11"/><text x="130" y="274" text-anchor="middle" font-size="10" fill="#0B3B3A">&#128054;</text>
+                <circle cx="270" cy="270" r="11"/><text x="270" y="274" text-anchor="middle" font-size="10" fill="#0B3B3A">&#128035;</text>
+                <circle cx="170" cy="230" r="11"/><text x="170" y="234" text-anchor="middle" font-size="10" fill="#0B3B3A">&#128029;</text>
+                <circle cx="230" cy="230" r="11"/><text x="230" y="234" text-anchor="middle" font-size="10" fill="#0B3B3A">&#128032;</text>
+                <circle cx="150" cy="190" r="11"/><text x="150" y="194" text-anchor="middle" font-size="10" fill="#0B3B3A">&#128060;</text>
+                <circle cx="250" cy="190" r="11"/><text x="250" y="194" text-anchor="middle" font-size="10" fill="#0B3B3A">&#128056;</text>
+              </g>
+              <ellipse cx="170" cy="150" rx="30" ry="40" fill="#FFFFFF" opacity="0.15"/>
+            </svg>
+            <p style="margin-top:var(--space-2); font-size:0.85rem; color:var(--muted); text-align:center;">Hover thumbnails to zoom &bull; Real photos appear here if uploaded</p>
+          </div>
+          <div class="thumbnails" id="gallery-thumbs"></div>
+        </div>
+        <div class="product-options">
+          <div class="option-card">
+            <h3>Size</h3>
+            <div class="radio-group" id="size-options">
+              <label class="radio-card selected" data-size="S">
+                <input type="radio" name="size" value="S" checked>
+                <div>
+                  <strong>HuntClock S</strong>
+                  <div style="font-size:0.85rem; color:var(--muted)">Up to 10 kg &bull; Rs 2,999</div>
+                </div>
+              </label>
+              <label class="radio-card" data-size="M">
+                <input type="radio" name="size" value="M">
+                <div>
+                  <strong>HuntClock M</strong>
+                  <div style="font-size:0.85rem; color:var(--muted)">10&ndash;25 kg &bull; Rs 3,499</div>
+                </div>
+              </label>
+              <label class="radio-card" data-size="L">
+                <input type="radio" name="size" value="L">
+                <div>
+                  <strong>HuntClock L</strong>
+                  <div style="font-size:0.85rem; color:var(--muted)">25 kg+ &bull; Rs 3,999</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="option-card">
+            <h3>Disc level</h3>
+            <div class="radio-group" id="disc-options">
+              <label class="radio-card selected" data-disc="Easy">
+                <input type="radio" name="disc" value="Easy" checked>
+                <div><strong>Easy</strong><div style="font-size:0.85rem; color:var(--muted)">Simpler mechanisms</div></div>
+              </label>
+              <label class="radio-card" data-disc="Medium">
+                <input type="radio" name="disc" value="Medium">
+                <div><strong>Medium</strong><div style="font-size:0.85rem; color:var(--muted)">Balanced challenge</div></div>
+              </label>
+              <label class="radio-card" data-disc="Genius">
+                <input type="radio" name="disc" value="Genius">
+                <div><strong>Genius</strong><div style="font-size:0.85rem; color:var(--muted)">Hardest mechanisms</div></div>
+              </label>
+            </div>
+            <label style="margin-top:var(--space-3); display:flex; align-items:center; gap:var(--space-2); cursor:pointer;">
+              <input type="checkbox" id="extra-disc"> <strong>Add extra disc pack (3 discs)</strong> &mdash; Rs 499
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--teal-100)">
+    <div class="container">
+      <div class="product-options" data-reveal>
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--space-2)">
+            <span style="font-weight:700; color:var(--teal-900)">Price</span>
+            <span id="price-display" style="font-size:1.5rem; font-weight:800; color:var(--teal-900)">Rs 2,999</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--muted); margin-top:var(--space-1)">Free delivery on orders above Rs 3,000. Otherwise Rs 99.</p>
+        </div>
+        <div class="add-row">
+          <button class="btn btn-primary btn-full" id="btn-add">Add to cart</button>
+          <a href="/checkout.html" class="btn btn-outline btn-full" id="btn-buy" style="display:none">Buy now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery check -->
+  <section>
+    <div class="container" data-reveal>
+      <div class="delivery-check">
+        <span class="section-label">Delivery estimate</span>
+        <h3>When will it arrive?</h3>
+        <div class="pin-row">
+          <input type="text" id="pin-input" maxlength="6" placeholder="6-digit PIN code" inputmode="numeric">
+          <button class="btn btn-outline" id="btn-check-pin">Check</button>
+        </div>
+        <div class="delivery-result" id="delivery-result" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <section>
+    <div class="container" data-reveal>
+      <div class="tabs">
+        <button class="tab active" data-tab="details">Details</button>
+        <button class="tab" data-tab="specs">Specs</button>
+        <button class="tab" data-tab="safety">Safety &amp; care</button>
+        <button class="tab" data-tab="box">What's in the box</button>
+      </div>
+      <div class="tab-panel active" id="tab-details">
+        <h3>The HuntClock difference</h3>
+        <p>HuntClock is a wind-up, battery-free dog enrichment game. A sealed clockwork timer releases treats every 20&ndash;30 minutes across 1, 2 or 3 hours into six different puzzle stations: Flap Nudge, Rope Pull, Sniff Tunnel, Roll Wheel, Slide Lid and Lick Pocket. A soft bell dings each time a station unlocks, so your dog learns to come back and hunt.</p>
+        <p>Normal puzzle toys are finished in 5&ndash;15 minutes and dogs memorise the solution. HuntClock keeps your dog busy for up to 3 hours, and swappable puzzle discs (Easy / Medium / Genius) rearrange the stations so your dog can never memorise the answer.</p>
+      </div>
+      <div class="tab-panel" id="tab-specs">
+        <h3>Specifications</h3>
+        <ul class="paw-list">
+          <li>Power: wind-up clockwork timer (no batteries)</li>
+          <li>Timer intervals: every 20&ndash;30 minutes</li>
+          <li>Duration: 1, 2 or 3 hours</li>
+          <li>Stations: 6 (Flap Nudge, Rope Pull, Sniff Tunnel, Roll Wheel, Slide Lid, Lick Pocket)</li>
+          <li>Discs: swappable Easy / Medium / Genius</li>
+          <li>Cleaning: parts detach, dishwasher-safe</li>
+          <li>Base: weighted with optional anchor strap</li>
+          <li>Sizes: S (up to 10 kg), M (10&ndash;25 kg), L (25 kg+)</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="tab-safety">
+        <h3>Safety &amp; care</h3>
+        <ul class="paw-list">
+          <li>Chew-safe materials tested for Indian dogs</li>
+          <li>All parts detach and are dishwasher-safe</li>
+          <li>Weighted base resists tipping; optional anchor strap for extra stability</li>
+          <li>No small batteries or electronics that can be swallowed</li>
+          <li>Supervise your dog the first few times</li>
+          <li>Wipe clean with a damp cloth between washes</li>
+        </ul>
+      </div>
+      <div class="tab-panel" id="tab-box">
+        <h3>What's in the box</h3>
+        <ul class="paw-list">
+          <li>1 HuntClock unit (size of your choice)</li>
+          <li>1 puzzle disc (Easy, Medium or Genius)</li>
+          <li>6 station inserts (Flap Nudge, Rope Pull, Sniff Tunnel, Roll Wheel, Slide Lid, Lick Pocket)</li>
+          <li>1 anchor strap (optional)</li>
+          <li>Welcome guide with treat suggestions</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Which size helper -->
+  <section class="teal-section" data-reveal>
+    <div class="container">
+      <span class="section-label">Not sure which size?</span>
+      <h2>Which size for your dog?</h2>
+      <div style="display:flex; gap:var(--space-3); flex-wrap:wrap; align-items:flex-end">
+        <div style="flex:1; min-width:200px">
+          <label for="dog-weight" class="visually-hidden">Your dog's weight (kg)</label>
+          <input type="number" id="dog-weight" placeholder="Dog weight in kg" inputmode="numeric" min="1" step="1">
+        </div>
+        <button class="btn btn-outline" id="btn-size-rec">Recommend</button>
+        <p id="size-rec-msg" style="margin-left:var(--space-3); font-size:0.95rem; font-weight:700; color:var(--teal-900);"></p>
+      </div>
+      <p style="font-size:0.85rem; color:var(--muted); margin-top:var(--space-2);">S: up to 10 kg &bull; M: 10&ndash;25 kg &bull; L: 25 kg+</p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section data-reveal>
+    <div class="container">
+      <span class="section-label">Reviews</span>
+      <h2>What parents say</h2>
+      <div style="display:flex; gap:var(--space-4); align-items:center; margin-bottom:var(--space-4)">
+        <span style="font-size:2rem; font-weight:800; color:var(--teal-900)">4.8</span>
+        <div style="flex:1">
+          <div class="review-bar"><span class="label">5 &starf;</span><div class="track"><div class="fill" style="width:82%"></div></div></div>
+          <div class="review-bar"><span class="label">4 &starf;</span><div class="track"><div class="fill" style="width:14%"></div></div></div>
+          <div class="review-bar"><span class="label">3 &starf;</span><div class="track"><div class="fill" style="width:3%"></div></div></div>
+          <div class="review-bar"><span class="label">2 &starf;</span><div class="track"><div class="fill" style="width:1%"></div></div></div>
+          <div class="review-bar"><span class="label">1 &starf;</span><div class="track"><div class="fill" style="width:0%"></div></div></div>
+        </div>
+        <span style="font-size:0.9rem; color:var(--muted)">1,200+ reviews</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand" style="color:#fff">HuntClock</a>
+        <p style="font-size:0.9rem; color:rgba(255,255,255,0.8); margin-top:var(--space-2); max-width:260px;">Wind-up, battery-free dog enrichment games made for Indian homes.</p>
+      </div>
+      <div><h4>Shop</h4><a href="/shop.html">Shop</a><a href="/demo.html">Live Demo</a><a href="/subscription.html">Subscribe</a></div>
+      <div><h4>Support</h4><a href="/track.html">Track Order</a><a href="/faq.html">FAQ</a></div>
+      <div>
+        <h4>Stay in touch</h4>
+        <form class="newsletter" id="footer-newsletter-shop" novalidate>
+          <input type="email" id="footer-email-shop" placeholder="you@example.com" required aria-label="Email">
+          <button type="submit" class="btn btn-primary" style="padding:6px 16px; font-size:0.85rem;">Join</button>
+          <p id="footer-news-msg-shop" style="font-size:0.8rem; margin-top:8px;"></p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">Made with love for dogs &bull; HuntClock &copy; 2026</div>
+  </div>
+</footer>
+
+<script type="module" src="/js/app.js"></script>
+<script type="module" src="/js/shop.js"></script>
+<script>
+  document.getElementById('footer-newsletter-shop').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('footer-email-shop').value;
+    const msg = document.getElementById('footer-news-msg-shop');
+    try {
+      const res = await fetch('/api/newsletter', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ email }) });
+      if (res.ok) { msg.textContent = 'Thanks for joining!'; msg.style.color = '#2F855A'; e.target.reset(); }
+      else { const j = await res.json(); msg.textContent = j.error || 'Signup failed.'; msg.style.color = '#C2410C'; }
+    } catch { msg.textContent = 'Something went wrong. Try again.'; msg.style.color = '#C2410C'; }
+  });
+</script>
+</body>
+</html>

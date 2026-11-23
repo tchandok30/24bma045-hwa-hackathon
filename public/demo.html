@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Demo &mdash; HuntClock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="main-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="HuntClock home">
+      <svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c0-1.1 0.9-2 2-2s2 0.9 2 2 0.9 2 2 2 2-0.9 2-2 0.9-2 2-2 2c-1.1 0-2 0.9-2 2M12 2c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M12 14c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M12 10c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M22 12c0-1.1 0.9-2 2-2s2 0.9 2 2 0.9 2 2 2 2-0.9 2-2 0.9-2 2-2 2c-1.1 0-2 0.9-2 2M14 22c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M10 22c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M18 10c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M18 14c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2" fill="#0B3B3A"/></svg>
+      HuntClock
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop</a>
+      <a href="/demo.html" style="background:var(--teal-100); color:var(--teal-900)">Live Demo</a>
+      <a href="/subscription.html">Subscribe</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/track.html">Track Order</a>
+      <a href="/cart.html" class="cart-badge-wrap" aria-label="Cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7 18c-1.1 0-1.5-0.9-1.5-1.5v-5h5v5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5v-5h2v5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5v-5c0-2.8-2.2-5-5-5H7c-2.8 0-5 2.2-5 5v5c0 0.8 0.7 1.5 1.5 1.5M3 18v-5c0-0.8 0.7-1.5 1.5-1.5s1.5 0.7 1.5 1.5v5" fill="none" stroke="#0B3B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="cart-count" hidden>0</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="drawer-overlay" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="drawer-overlay">
+  <div class="drawer-header">
+    <span class="brand" style="font-size:1.2rem">HuntClock</span>
+    <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+  </div>
+  <div class="drawer-links">
+    <a href="/shop.html">Shop</a>
+    <a href="/demo.html">Live Demo</a>
+    <a href="/subscription.html">Subscribe</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/track.html">Track Order</a>
+    <a href="/cart.html">Cart (<span class="cart-count">0</span>)</a>
+  </div>
+  <div class="drawer-cart">Items in cart: <span class="cart-count">0</span></div>
+</div>
+
+<main id="main">
+  <section style="padding:var(--space-5) 0 var(--space-6)">
+    <div class="container" data-reveal>
+      <span class="section-label">Try it yourself</span>
+      <h1>HuntClock live demo</h1>
+      <p>Drag the timer to see stations unlock one by one. Each ding means a new puzzle station opens with treats inside.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="demo-controls" data-reveal>
+        <div class="slider-row">
+          <label style="flex:none; font-weight:700; color:var(--teal-900); font-size:0.9rem">Timer</label>
+          <input type="range" id="time-slider" min="0" max="180" value="0" step="1">
+          <span id="time-display" style="flex:none; font-family:var(--font-heading); font-weight:800; font-size:1.1rem; color:var(--teal-900); min-width:60px; text-align:right">0h 0m</span>
+        </div>
+        <div class="presets">
+          <button class="preset-btn" data-mins="0">Reset</button>
+          <button class="preset-btn" data-mins="60">1 hour</button>
+          <button class="preset-btn" data-mins="120">2 hours</button>
+          <button class="preset-btn" data-mins="180">3 hours</button>
+          <button class="play-btn" id="btn-play">Play &rarr;</button>
+        </div>
+      </div>
+      <div class="disc-selector" data-reveal>
+        <button class="disc-btn active" data-disc="Easy">Easy</button>
+        <button class="disc-btn" data-disc="Medium">Medium</button>
+        <button class="disc-btn" data-disc="Genius">Genius</button>
+        <span style="font-size:0.85rem; color:var(--muted); margin-left:auto">Swapping discs reshuffles stations</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="demo-board" data-reveal>
+        <svg class="board-bg" viewBox="0 0 500 400" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0 L0 0 0 40" fill="none" stroke="#E8DCC6" stroke-width="1"/></pattern></defs>
+          <rect width="100%" height="100%" fill="url(#grid)"/>
+          <circle cx="250" cy="200" r="130" fill="none" stroke="#14625F" stroke-width="3" opacity="0.25"/>
+          <line x1="250" y1="70" x2="250" y2="200" stroke="#14625F" stroke-width="2" opacity="0.4"/>
+          <line x1="250" y1="200" x2="350" y2="220" stroke="#14625F" stroke-width="2" opacity="0.4"/>
+        </svg>
+        <!-- Six station slots positioned around circle -->
+        <div class="station-slot" id="s-flap" style="top:60px; left:228px">&#128054;</div>
+        <div class="station-slot" id="s-rope" style="top:130px; left:30px">&#128035;</div>
+        <div class="station-slot" id="s-sniff" style="top:240px; left:130px">&#128029;</div>
+        <div class="station-slot" id="s-roll" style="top:300px; left:260px">&#128032;</div>
+        <div class="station-slot" id="s-slide" style="top:240px; left:370px">&#128060;</div>
+        <div class="station-slot" id="s-lick" style="top:130px; left:410px">&#128056;</div>
+        <div class="dog-marker" id="dog-marker" aria-hidden="true">🐕</div>
+      </div>
+
+      <div class="demo-counters">
+        <div class="counter"><div class="num" id="cnt-unlocked">0</div><div class="lbl">Stations unlocked</div></div>
+        <div class="counter"><div class="num" id="cnt-treats">0</div><div class="lbl">Treats released</div></div>
+        <div class="counter"><div class="num" id="cnt-busy">0m</div><div class="lbl">Busy time</div></div>
+        <div class="counter"><div class="num" id="cnt-vs">8m</div><div class="lbl">Normal toy busy time</div></div>
+      </div>
+
+      <div class="vs-chart" data-reveal>
+        <div class="vs-bar"><div class="fill" id="bar-huntclock" style="height:100%"></div><span class="lbl">HuntClock</span></div>
+        <div class="vs-bar"><div class="fill" id="bar-normal" style="height:27%"></div><span class="lbl">Normal toy</span></div>
+      </div>
+
+      <div style="text-align:center; margin-top:var(--space-4)" data-reveal>
+        <a href="/shop.html" class="btn btn-primary">Buy HuntClock &mdash; Rs 2,999</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">Made with love for dogs &bull; HuntClock &copy; 2026</div>
+  </div>
+</footer>
+
+<script type="module" src="/js/app.js"></script>
+<script type="module" src="/js/demo.js"></script>
+</body>
+</html>

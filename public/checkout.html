@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout &mdash; HuntClock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/pages.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="main-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="HuntClock home">
+      <svg class="paw" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12c0-1.1 0.9-2 2-2s2 0.9 2 2 0.9 2 2 2 2-0.9 2-2 0.9-2 2-2 2c-1.1 0-2 0.9-2 2M12 2c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M12 14c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M12 10c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M22 12c0-1.1 0.9-2 2-2s2 0.9 2 2 0.9 2 2 2 2-0.9 2-2 0.9-2 2-2 2c-1.1 0-2 0.9-2 2M14 22c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M10 22c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M18 10c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2M18 14c-1.1 0-2 0.9-2 2s0.9 2 2 2 2-0.9 2-2-0.9-2-2-2" fill="#0B3B3A"/></svg>
+      HuntClock
+    </a>
+    <div class="nav-links">
+      <a href="/shop.html">Shop</a>
+      <a href="/demo.html">Live Demo</a>
+      <a href="/subscription.html">Subscribe</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/track.html">Track Order</a>
+      <a href="/cart.html" class="cart-badge-wrap" aria-label="Cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M7 18c-1.1 0-1.5-0.9-1.5-1.5v-5h5v5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5v-5h2v5c0 0.8 0.7 1.5 1.5 1.5s1.5-0.7 1.5-1.5v-5c0-2.8-2.2-5-5-5H7c-2.8 0-5 2.2-5 5v5c0 0.8 0.7 1.5 1.5 1.5M3 18v-5c0-0.8 0.7-1.5 1.5-1.5s1.5 0.7 1.5 1.5v5" fill="none" stroke="#0B3B3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="cart-count" hidden>0</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="drawer-overlay" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="drawer-overlay" id="drawer-overlay">
+  <div class="drawer-header">
+    <span class="brand" style="font-size:1.2rem">HuntClock</span>
+    <button class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+  </div>
+  <div class="drawer-links">
+    <a href="/shop.html">Shop</a>
+    <a href="/demo.html">Live Demo</a>
+    <a href="/subscription.html">Subscribe</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/track.html">Track Order</a>
+    <a href="/cart.html">Cart (<span class="cart-count">0</span>)</a>
+  </div>
+  <div class="drawer-cart">Items in cart: <span class="cart-count">0</span></div>
+</div>
+
+<main id="main">
+  <section style="padding:var(--space-5) 0 var(--space-6)">
+    <div class="container" data-reveal>
+      <h1>Checkout</h1>
+      <p>Demo payment &mdash; no real charge. Your order is recorded and you&rsquo;ll get an order number.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="checkout-layout">
+        <form id="checkout-form" novalidate data-reveal>
+          <div class="form-grid">
+            <div class="field-group">
+              <label for="c-name">Full name</label>
+              <input type="text" id="c-name" required>
+              <span class="field-error" id="err-c-name" aria-live="polite"></span>
+            </div>
+            <div class="field-group">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" required>
+              <span class="field-error" id="err-c-email" aria-live="polite"></span>
+            </div>
+            <div class="field-group">
+              <label for="c-phone">Mobile number</label>
+              <input type="tel" id="c-phone" maxlength="10" inputmode="numeric" required>
+              <span class="field-error" id="err-c-phone" aria-live="polite"></span>
+            </div>
+            <div class="field-group" style="grid-column:1/-1">
+              <label for="c-addr1">Address line 1</label>
+              <input type="text" id="c-addr1" required>
+              <span class="field-error" id="err-c-addr1" aria-live="polite"></span>
+            </div>
+            <div class="field-group" style="grid-column:1/-1">
+              <label for="c-addr2">Address line 2 (optional)</label>
+              <input type="text" id="c-addr2">
+              <span class="field-error" id="err-c-addr2" aria-live="polite"></span>
+            </div>
+            <div class="field-group">
+              <label for="c-city">City</label>
+              <input type="text" id="c-city" required>
+              <span class="field-error" id="err-c-city" aria-live="polite"></span>
+            </div>
+            <div class="field-group">
+              <label for="c-state">State</label>
+              <select id="c-state" required>
+                <option value="">Select state</option>
+                <option>Maharashtra</option><option>Delhi</option><option>Karnataka</option>
+                <option>Tamil Nadu</option><option>West Bengal</option><option>Gujarat</option>
+                <option>Rajasthan</option><option>Uttar Pradesh</option><option>Telangana</option>
+                <option>Kerala</option><option>Haryana</option><option>Punjab</option>
+                <option>Bihar</option><option>Odisha</option><option>Assam</option>
+              </select>
+              <span class="field-error" id="err-c-state" aria-live="polite"></span>
+            </div>
+            <div class="field-group">
+              <label for="c-pin">PIN code</label>
+              <input type="text" id="c-pin" maxlength="6" inputmode="numeric" required>
+              <span class="field-error" id="err-c-pin" aria-live="polite"></span>
+            </div>
+            <div class="field-group" style="grid-column:1/-1">
+              <label for="c-dog">Dog's name (optional)</label>
+              <input type="text" id="c-dog" placeholder="e.g. Bruno">
+            </div>
+            <div class="field-group" style="grid-column:1/-1">
+              <label for="c-dogsize">Dog's size (optional)</label>
+              <select id="c-dogsize"><option value="">Select size</option><option>Small (up to 10 kg)</option><option>Medium (10&ndash;25 kg)</option><option>Large (25 kg+)</option></select>
+            </div>
+            <div class="field-group" style="grid-column:1/-1">
+              <label for="c-notes">Delivery notes (optional)</label>
+              <textarea id="c-notes" rows="3" placeholder="e.g. Leave at gate"></textarea>
+            </div>
+          </div>
+
+          <fieldset class="payment-methods">
+            <legend>Payment method</legend>
+            <label class="payment-radio">
+              <input type="radio" name="payment" value="cod" checked>
+              <strong>Cash on Delivery</strong>
+              <span style="color:var(--muted); font-size:0.85rem"> Pay when it arrives</span>
+            </label>
+            <label class="payment-radio">
+              <input type="radio" name="payment" value="upi">
+              <strong>UPI</strong>
+              <span style="color:var(--muted); font-size:0.85rem"> Pay via UPI app</span>
+            </label>
+            <div class="upi-field" id="upi-field">
+              <label for="c-upi">UPI ID</label>
+              <input type="text" id="c-upi" placeholder="name@upi" pattern="^[a-zA-Z0-9.-]{2,256}@[a-zA-Z]{2,64}$">
+              <span class="field-error" id="err-c-upi" aria-live="polite"></span>
+            </div>
+            <label class="payment-radio">
+              <input type="radio" name="payment" value="card">
+              <strong>Card (demo)</strong>
+              <span style="color:var(--muted); font-size:0.85rem"> Simulated &mdash; no real charge</span>
+            </label>
+            <div class="card-field" id="card-field">
+              <div class="card-row">
+                <input type="text" id="c-card" maxlength="19" placeholder="Card number" inputmode="numeric">
+                <input type="text" id="c-expiry" maxlength="5" placeholder="MM/YY" inputmode="numeric">
+                <input type="text" id="c-cvv" maxlength="3" placeholder="CVV" inputmode="numeric">
+              </div>
+              <span class="field-error" id="err-c-card" aria-live="polite"></span>
+            </div>
+          </fieldset>
+
+          <div class="field-group" style="grid-column:1/-1; margin-top:var(--space-4)">
+            <button type="submit" class="btn btn-primary btn-full" id="btn-submit" disabled>Place order</button>
+            <p id="form-msg" class="promo-msg" style="margin-top:var(--space-2)"></p>
+          </div>
+        </form>
+
+        <div class="order-sidebar card" data-reveal>
+          <h3 style="margin-top:0">Order summary</h3>
+          <div id="sidebar-items" style="font-size:0.9rem; margin-bottom:var(--space-3)"></div>
+          <div class="total-row"><span>Subtotal</span><span id="sb-subtotal">Rs 0</span></div>
+          <div class="total-row"><span>Delivery</span><span id="sb-delivery">Rs 0</span></div>
+          <div class="total-row total"><span>Total</span><span id="sb-total">Rs 0</span></div>
+          <p style="font-size:0.8rem; color:var(--muted); margin-top:var(--space-3)">Estimated delivery: <span id="sb-estimate">3&ndash;5 days</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">Made with love for dogs &bull; HuntClock &copy; 2026</div>
+  </div>
+</footer>
+
+<script type="module" src="/js/app.js"></script>
+<script type="module" src="/js/checkout.js"></script>
+</body>
+</html>
