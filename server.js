@@ -274,3 +274,6 @@ const app = express();
   app.listen(PORT, () => {
     console.log(`HuntClock server running on http://localhost:${PORT}`);
   });
+});
+
+module.exports = app;
