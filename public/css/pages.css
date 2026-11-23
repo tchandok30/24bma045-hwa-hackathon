@@ -358,6 +358,14 @@ input[type=range] { width: 100%; accent-color: var(--tangerine); }
   .demo-board { height: 520px; }
 }
 
+/* ---------- Extra visual pop ---------- */
+.btn-primary.btn-shimmer { background: linear-gradient(135deg, var(--tangerine), var(--tangerine-dark)); }
+.btn-primary.btn-shimmer:hover { background: linear-gradient(135deg, var(--tangerine-dark), var(--tangerine)); box-shadow: var(--shadow-glow); }
+.hero h1 { background: linear-gradient(135deg, var(--teal-900), var(--teal-700)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero-visual svg.product-svg { filter: drop-shadow(8px 8px 0 rgba(11,59,58,0.15)); }
+.card:hover { transform: translateY(-6px) scale(1.02); box-shadow: var(--shadow-sticker), var(--shadow-glow); }
+.radio-card.selected { box-shadow: var(--shadow-sticker), var(--shadow-glow); }
+
 /* ---------- FAQ page ---------- */
 .faq-grid {
   display: grid;
